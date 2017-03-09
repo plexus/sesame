@@ -116,7 +116,7 @@
              {:source-paths ^:replace ["src/clj" "src/cljc"]
               :prep-tasks ["compile"
                            ["cljsbuild" "once" "min"]
-                           ["run" "-m" "garden-reloader.main" "sesame.styles"]]
+                           ["run" "-m" "garden-watcher.main" "sesame.styles"]]
               :hooks []
               :omit-source true
               :aot :all}})
