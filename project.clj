@@ -16,9 +16,8 @@
                  [com.stuartsierra/component "0.3.2"]
                  [org.danielsz/system "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]
-                 [org.clojars.featheredtoast/reloaded-repl-cljs "0.1.0"]
                  [reagent "0.6.0"]
-                 [lambdaisland/garden-watcher "0.3.0"]]
+                 [lambdaisland/garden-watcher "0.3.1"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-environ "1.1.0"]]
@@ -46,7 +45,7 @@
               [{:id "app"
                 :source-paths ["src/cljs" "src/cljc" "dev"]
 
-                :figwheel {:on-jsload "org.clojars.featheredtoast.reloaded-repl-cljs/go"}
+                :figwheel {:on-jsload "sesame.system/reset"}
 
                 :compiler {:main cljs.user
                            :asset-path "js/compiled/out"
@@ -63,7 +62,7 @@
                {:id "min"
                 :source-paths ["src/cljs" "src/cljc"]
                 :jar true
-                :compiler {:main sesame.core
+                :compiler {:main sesame.system
                            :output-to "resources/public/js/compiled/sesame.js"
                            :output-dir "target"
                            :source-map-timestamp true
